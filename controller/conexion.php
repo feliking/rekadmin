@@ -2,7 +2,7 @@
 /* Database connection start */
 $servername = "localhost";
 $username = "root";
-$password = "Temporal1";
+$password = "";
 $dbname = "rekadmin";
 $con = mysqli_connect($servername, $username, $password, $dbname) or die("Connection failed: " . mysqli_connect_error());
 if (mysqli_connect_errno()) {

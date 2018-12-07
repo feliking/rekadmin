@@ -26,7 +26,6 @@ if(!isset($_SESSION["user_id"])){
           <li><a href="../views/principal.php"><span><font color="#5484FF">Volver a Requisitos</font></span></a></li>
             <li><a href="../views/add_request.php" class="active"><span><font color="#5484FF">Nuevo requerimiento</font></span></a></li>
             <li><a href="../views/view_proveedor.php" class="active"><span><font color="#5484FF">Ver proveedores</font></span></a></li>
-            <li><a href="../views/update_user.php"><span><font color="#5484FF">Cambiar contraseña</font></span></a></li>
             <li><a href="../controller/logout.php"><span><font color="#5484FF">Salir: <?php echo $_SESSION["nombre"]  ?></font></span></a></li>
         </ul>
         <span aria-hidden="true" class="stretchy-nav-bg"></span>

@@ -28,7 +28,6 @@ if(!isset($_SESSION["user_id"])){
             <li><a href="../views/add_proveedor.php" class="active"><span>Registrar proveedor</span></a></li>
             <li><a href="../views/principal.php"><span>Volver a Requerimientos</span></a></li>
             <li><a href="../views/add_proveedor.php"><span>Registrar Proveedores</span></a></li>
-            <li><a href="../views/update_user.php"><span>Cambiar contraseña</span></a></li>
             <li><a href="../controller/logout.php"><span>Salir: <?php echo $_SESSION["nombre"]  ?></span></a></li>
         </ul>
         <span aria-hidden="true" class="stretchy-nav-bg"></span>

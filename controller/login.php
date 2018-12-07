@@ -31,6 +31,9 @@
 				$_SESSION["sexo"]=$sexo;
 				$_SESSION["email"]=$email;
 				$_SESSION["password"]=$password;
+				if ($user_id == 0) {
+					print "<script>window.location='../views/view_user.php';</script>";
+				}
 				print "<script>window.location='../views/principal.php';</script>";
 				}			
 			}
