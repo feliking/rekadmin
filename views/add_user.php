@@ -15,11 +15,12 @@ else{
   <meta charset="UTF-8">
   <title>REKADMIN</title>
   <link rel="shortcut icon" href="../assets/favicono.ico">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  <link rel="stylesheet" href="../css/reset.css"> <!-- CSS reset -->
-  <link rel="stylesheet" href="../css/cabecera.css"> <!-- Resource style -->
-  <script src="../js/modernizr.js"></script> <!-- Modernizr -->
-  <link rel="stylesheet" href="../css/form.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="../css/cabecera.css"> <!-- Resource style -->
+    <script src="../js/modernizr.js"></script> <!-- Modernizr -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/modal.css">
 </head>
 
 <body>
@@ -30,88 +31,61 @@ else{
     </a>
 
     <ul>
-      <li><a href="../views/page_user.php"><span>Tareas Principales</span></a></li>
       <li><a href="../views/view_user.php" class="active"><span>Ver usuarios con acceso al sistema</span></a></li>
-      <li><a href="../controller/logout.php"><span>Salir: <?php echo $_SESSION["nombres"]  ?></span></a></li>
+      <li><a href="../controller/logout.php"><span>Salir: <?php echo $_SESSION["nombre"]  ?></span></a></li>
     </ul>
     <span aria-hidden="true" class="stretchy-nav-bg"></span>
   </nav>
-    <div class="container">
-    <div class="wrapper">
-      <ul class="steps">
-        <li class="is-active">Actualizar datos del usuario</li>
+  <div class="container">
+  <form  action="../controller/add_user.php" method="post" name="form" enctype="multipart/form-data">
+  <div class="frame3">
+    <center>
+    <div class="navi">
+      <ul class"links">
+        <li class="signin-active"><a class="btn" href="#">Nuevo Usuario</a></li>
       </ul>
-      <form name="update_user" class="form-wrapper" method="post" action="../controller/add_user.php">
-        <fieldset class="section is-active">
-          <input type="number" name="ci" id="ci" placeholder="Carnet de identidad" title="Carnet de identidad" required>
-          <input type="text" name="nombres" id="nombres" placeholder="Nombres" title="Nombres">
-          <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos" title="Apellidos">
-          <select name="sexo" id="sexo" title="Genero" required>
+    </div>
+				  <div class="form-signin">
+          <label for="fullname">Carnet de identidad</label>
+          <input class="form-styling" type="number" name="ci" id="ci" placeholder="Carnet de identidad" title="Carnet de identidad" required>
+          <label for="fullname">Nombres</label>
+          <input class="form-styling" type="text" name="nombre" id="nombres" placeholder="Nombres" title="Nombres">
+          <label for="fullname">Apellidos</label>
+          <input class="form-styling" type="text" name="apellido" id="apellidos" placeholder="Apellidos" title="Apellidos">
+          <label for="fullname">Género</label>
+          <select class="form-styling" name="sexo" id="sexo" title="Genero" required>
             <option value="" selected disabled>Elija el género</option>
             <option value="M">Masculino</option>
             <option value="F">Femenino</option>
           </select>
-          <input type="email" name="email" id="email" placeholder="Correo electronico" title="Correo Electronico">
-          <input type="text" name="fecha_nac" id="fecha_nac" placeholder="Fecha de nacimiento" title="Fecha de nacimiento" onfocus="(this.type='date')" required>
-          <select name="nacionalidad" id="nacionalidad" title="Nacionalidad" required>
-            <option value="" disabled selected>Seleccione la nacionalidad</option>
-            <option value="LA PAZ">LA PAZ</option>
-            <option value="EL ALTO">EL ALTO</option>
-            <option value="ORURO">ORURO</option>
-            <option value="COCHABAMBA">COCHABAMBA</option>
-            <option value="SANTA CRUZ">SANTA CRUZ</option>
-            <option value="SUCRE">SUCRE</option>
-            <option value="TARIJA">TARIJA</option>
-            <option value="POTOSI">POTOSI</option>
-            <option value="PANDO">PANDO</option>
-            <option value="BENI">BENI</option>
-          </select>
-          <select name="tipo" id="tipo" title="Tipo" required>
-            <option value="" disabled selected>Seleccione el tipo de usuario</option>
-            <option value="0">Administrador</option>
-            <option value="1">Usuario</option>
-          </select>
-          <select name="region" id="region" title="Regional" required>
-            <option value="" selected disabled>Seleccione region de acceso</option>
-            <option value="OF. NACIONAL">OF. Nacional</option>
-            <option value="EL ALTO">El Alto</option>
-            <option value="LA PAZ">La Paz</option>
-            <option value="COCHABAMBA">Cochabamba</option>
-            <option value="SANTA CRUZ">Santa Cruz</option>
-            <option value="ORURO">Oruro</option>
-            <option value="BENI">Beni</option>
-            <option value="PANDO">Pando</option>
-            <option value="SUCRE">Sucre</option>
-            <option value="TARIJA">Tarija</option>
-            <option value="POTOSI">Potosi</option>
-          </select>
-          <input type="text" name="usuario" id="usuario" placeholder="Nombre de usuario" title="Nombre de usuario">
-          <input type="password" name="pass2" id="pass2" placeholder="Introduzca contraseña" required title="Contraseña">
-          <input type="password" name="pass3" id="pass3" placeholder="Repita la contraseña" required title="Repita la contraseña por favor">
-          <input class="submit button" type="submit" value="Añadir usuario">
+          <label for="fullname">Correo Electrónico</label>
+          <input class="form-styling" type="email" name="email" id="email" placeholder="Correo electronico" title="Correo Electronico">
+          <label for="fullname">Nombre de usuario</label>
+          <input class="form-styling" type="text" name="usuario" id="usuario" placeholder="Nombre de usuario" title="Nombre de usuario">
+          <label for="fullname">Contraseña</label>
+          <input class="form-styling" type="password" name="password" id="pass2" placeholder="Introduzca contraseña" required title="Contraseña">
+          <input class="btn-signup" type="submit" value="Añadir usuario">
           <div class="row cf" style="color: red"><p id="error"></p></div>
-        </fieldset>
-      </form>
-    </div>
-  </div>
-  
-  <script type="text/javascript">
-      with(document.update_user){
-        onsubmit = function(e){
-        e.preventDefault();
-        var x=true;
-        if(pass2.value!=pass3.value){
-          x=false;
-          document.getElementById("error").innerHTML="Las contraseñas no son iguales, verifique por favor";
-        }
-        if (x){ 
-          submit(); 
-        }
+          </div>
+          </center>
+          </div>
+  </form>
+</div>
+  <script type="text/javascript" src='../js/jquery.min.js'></script>
+<script type="text/javascript" src='../js/angular.min.js'></script>
+<script type="text/javascript" src="../js/cabecera.js"></script> 
+<script type="text/javascript">
+  window.onload=function(){
+    var eSelect = document.getElementById('area_of');
+     var optarea_of = document.getElementById('area');
+     eSelect.onchange = function(){
+      if (eSelect.selectedIndex===14) {
+        optarea_of.type = 'text';
+        optarea_of.name = 'area_of';
+      }
+     }
   }
-}
-    </script>
-  <script type="text/javascript" src="../js/jquery-2.2.3.min.js"></script>
-  <script src="../js/cabecera.js"></script> 
+</script>
     
 </body>
 </html>

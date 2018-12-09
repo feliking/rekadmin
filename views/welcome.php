@@ -1,14 +1,14 @@
 <?php 
   include "../controller/conexion.php";
   $found=false;
-  $sql1= "SELECT * FROM usuario";
+  $sql1= "SELECT * FROM usuario WHERE ci = 0";
   $query = $con->query($sql1);
   while ($r=$query->fetch_array()) {
     $found=true;
     break;
   }
   if ($found) {
-   print "<script>alert(\"Acceso restringido, Ya existe un usuario en el sistema\");window.location='../index.php';</script>";
+   print "<script>alert(\"Acceso restringido, Ya existe un administrador en el sistema\");window.location='../index.php';</script>";
   }
  ?>
 <!DOCTYPE html>
@@ -22,11 +22,11 @@
 </head>
 <body>
 <div class="overlay">
-  <form name="crea_usuario" class="form-wrapper" method="post" action="../controller/add_user.php">
+  <form name="crea_usuario" class="form-wrapper" method="post" action="../controller/first_time.php">
   <div class="wrap" style="float: left; padding-left: 10%">
    <h1>Bienvenido a Rekadmin</h1>
-   <h3>Configura tú cuenta por favor para proteger tu información</h3>
-   <input type="number" name="ci" id="ci" placeholder="Carnet de identidad" required>
+   <h3>Configura la cuenta del administrador</h3>
+   <input type="hidden" name="ci" id="ci" value="0">
     <input type="text" name="nombre" id="nombre" placeholder="Nombres" required>
     <input type="text" name="apellido" id="apellido" placeholder="Apellidos" required>
     <select name="sexo" id="sexo">
@@ -35,6 +35,7 @@
       <option value="F">Femenino</option>
     </select>
     <input type="email" name="email" id="email" placeholder="Correo Electronico" required>
+    <h3>Nota: La cuenta del administrador es unica y es el unico en agregar accesos al sistema</h3>
   </div>
   <div class="wrap" style="float: right; padding-right: 10%">
     <h3 style="padding-top: 50%">Autentificacion</h3>

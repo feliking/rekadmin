@@ -1,6 +1,6 @@
 <?php 
   session_start();
-  if ($_SESSION['user_id']==null || $_SESSION['tipo']!=0) {
+  if ($_SESSION['user_id']==null || $_SESSION['user_id']!=0) {
     print "<script>alert(\"No puede realizar estas acciones como usuario.\");window.location='../views/view_user.php';</script>";
     exit;
   }

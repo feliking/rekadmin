@@ -58,9 +58,7 @@ else{
         </a>
 
         <ul>
-            <li><a href="../views/page_admin.php" class="active"><span><font color="red">Panel del administrador</font></span></a></li>
             <li><a href="../views/add_user.php"><span><font color="red">Añadir nuevos usuarios</font></span></a></li>
-            <li><a href="../views/update_admin.php"><span><font color="red">Actuatizar datos del administrador</font></span></a></li>
             <li><a href="../controller/logout.php"><span><font color="red">Salir: <?php echo $_SESSION["nombre"]  ?></font></span></a></li>
         </ul>
 

@@ -1,15 +1,15 @@
 <?php 
   include "controller/conexion.php";
   $found=false;
-  $sql1= "SELECT * FROM usuario";
+  $sql1= "SELECT * FROM usuario WHERE ci = 0";
   $query = $con->query($sql1);
   while ($r=$query->fetch_array()) {
     $found=true;
     break;
   }
   if (!$found) {
-   	print "<script>alert(\"Bienvenido al sistema REKADMIN\");window.location='views/welcome.php';</script>";
-  }
+   	print "<script>alert(\"No existe un administrador en el sistema, por favor configurelo\");window.location='views/welcome.php';</script>";
+	}
   else{
   	session_start();
 	if(isset($_SESSION["user_id"])){
