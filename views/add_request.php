@@ -40,7 +40,10 @@ if(!isset($_SESSION["user_id"])){
     $sql=("SELECT * FROM request");
     $query=mysqli_query($con,$sql);
     while($arreglo=mysqli_fetch_array($query)){
-      $count++;
+      $cad = substr($arreglo[1], -4);
+      if($cad == $ano){
+        $count++;
+      }
     }
    ?>
   <form id="request" action="../controller/add_request.php" method="post" name="form" enctype="multipart/form-data">
